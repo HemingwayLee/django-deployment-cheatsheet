@@ -13,11 +13,6 @@ RUN django-admin startproject mysite
 
 WORKDIR /home/mysite
 RUN python3 manage.py migrate
-# RUN tmux new-session -d -s "myDjangoSession" "python3 manage.py runserver 0.0.0.0:8000"
 
 ENTRYPOINT ["/bin/bash"]
-
-
-# docker build -t my-django .
-# docker run -it -p 8000:8000 --rm my-django
 
