@@ -14,5 +14,5 @@ RUN django-admin startproject mysite
 WORKDIR /home/mysite
 RUN python3 manage.py migrate
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT python3 manage.py runserver 0.0.0.0:8000 && /bin/bash
 
