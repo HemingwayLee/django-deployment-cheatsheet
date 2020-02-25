@@ -1,4 +1,5 @@
-upstream django {
+# test is dash ok in upstream
+upstream my-django {
   server 127.0.0.1:8000;
 }
 
@@ -14,6 +15,6 @@ server {
   server_name _;
 
   location / {
-    proxy_pass  http://django;
+    proxy_pass  http://my-django;
   }
 }
