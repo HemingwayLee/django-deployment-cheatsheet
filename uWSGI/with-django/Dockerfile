@@ -10,6 +10,7 @@ WORKDIR /home/mysite
 RUN python3 manage.py migrate
 
 ENTRYPOINT uwsgi --http :8000 --module mysite.wsgi
-# ENTRYPOINT uwsgi --http :8000 --module mysite.wsgi && /bin/bash
 
+# uWSGI will run on the foreground, no need to add /bin/bash
+# ENTRYPOINT uwsgi --http :8000 --module mysite.wsgi && /bin/bash
 
