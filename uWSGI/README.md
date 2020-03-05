@@ -1,5 +1,21 @@
-# How to use
+# What is `uWSGI`
+* It is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C
+* It can be installed by `pip`
+* It runs on the foreground
+* It can be run with/without Django
+
+## Without Django
+
+Use the following command to run the server
 ```
-docker build -t my-uwsgi .
-docker run -it -p 8000:8000 --rm my-uwsgi
+uwsgi --http :8000 --wsgi-file test.py
 ```
+
+## With Django
+```
+uwsgi --http :8000 --module mysite.wsgi
+```
+
+
+
+
