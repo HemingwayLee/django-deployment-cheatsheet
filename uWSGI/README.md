@@ -16,6 +16,8 @@ uwsgi --http :8000 --wsgi-file test.py
 uwsgi --http :8000 --module mysite.wsgi
 ```
 
-
-
+## With nginx
+```
+uwsgi --socket :8001 --module mysite.wsgi
+```
 
