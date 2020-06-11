@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mydb:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: abc
+  task:
+    build: .
+    command: ./init.sh
+    environment:
+      DBHOST: mydb
+      DBPASS: pass
+      DBUSER: postgres
+      DBNAME: abc
+    depends_on:
+      - mydb
+
