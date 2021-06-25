@@ -1,0 +1,20 @@
+# test is dash ok in upstream
+upstream my-django {
+  server 127.0.0.1:8000;
+}
+
+
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  root /var/www/html;
+
+  index index.html index.nginx-debian.html;
+
+  server_name _;
+
+  location /foo {
+    proxy_pass  http://my-django/;
+  }
+}
