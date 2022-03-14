@@ -1,8 +1,6 @@
-# test is dash ok in upstream
 upstream my-django {
   server 127.0.0.1:8000;
 }
-
 
 server {
   listen 80 default_server;
