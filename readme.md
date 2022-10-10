@@ -12,7 +12,7 @@
 ## Don't put virtualenv directory into git repo, [ref](https://stackoverflow.com/questions/6590688/is-it-bad-to-have-my-virtualenv-directory-inside-my-git-repository)
 * Use `requirements.txt`
 
-## Don't commit `migrations` folder to git
+## Commit `migrations` folder to git
 * it will create conflicts
 * just run `python manage.py makemigrations` and `python manage.py migrate` on the server
 
